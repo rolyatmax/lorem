@@ -346,7 +346,7 @@
 		random: function(min, max) {
 			var round, diff = max - min;
 			(diff < 1) || (round = true);
-			max ? (max = max) : (max = min, min = 0);
+			max || (max = min, min = 0);
 			if (round) { return min + Math.floor( Math.random() * diff + 0.5 ); }
 			return min + ( Math.random() * diff );
 		}
