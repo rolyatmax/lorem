@@ -239,6 +239,74 @@ button:hover {
             transition: all .5 cubic-bezier(.67,.02,.29,.99);
 
 }
+.open_info {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    border: 1px solid #D3D3D3;
+    background-color: #fff;
+    color: #838383;
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+}
+
+.open_info:hover {
+    color: #444;
+    border: 1px solid #444;
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+}
+
+#info h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+#info .close {
+    padding: 5px;
+    position: absolute;
+    top:1%;
+    left:1%;
+    display: block;
+    border: 1px solid #D3D3D3;
+    background-color: #fff;
+    color: #838383;
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+}
+
+#info .close:hover {
+    color: #444;
+    border: 1px solid #444;
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+}
+
+#info {
+    z-index: 10;
+    text-align: left;
+    border: 1px dotted #d3d3d3;
+    padding: 20px;
+    width: 400px;
+    position: fixed;
+    top: 1%;
+    left: -450px;
+    background-color: #fff;
+    -webkit-transition: all .25s linear;
+       -moz-transition: all .25s linear;
+            transition: all .25s linear;
+}
+
+#info.open {
+    left: 1%;
+    -webkit-transition: all .25s linear;
+       -moz-transition: all .25s linear;
+            transition: all .25s linear;
+}
 
 footer p {
     margin-top: 3em;

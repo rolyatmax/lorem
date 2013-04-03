@@ -311,7 +311,7 @@
 						startMotion();
 					}, speed);
 					window.setTimeout(function(){
-						options({fadeOpacity: 0.25, offset: 0});
+						options({fadeOpacity: 0.45, offset: 0});
 					}, speed * 1.1);
 
 					window.setTimeout(function(){

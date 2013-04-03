@@ -1,14 +1,15 @@
 jQuery(function(){
 
-	var $container = $('.container'),
-		$title     = $('header span'),
-		$main      = $('.main'),
-		$nav       = $('nav'),
-		$footer    = $('footer'),
-		$autopilot = $('.autopilot'),
-		$cite      = $('cite'),
-		$author    = $('.author'),
-		$attribution = $('.attribution');
+	var $container   = $('.container'),
+		$title       = $('header span'),
+		$main        = $('.main'),
+		$nav         = $('nav'),
+		$footer      = $('footer'),
+		$autopilot   = $('.autopilot'),
+		$cite        = $('cite'),
+		$author      = $('.author'),
+		$attribution = $('.attribution'),
+		$info        = $('#info');
 
 	var poetry = window.poetry = {
 		init: init,
@@ -28,8 +29,15 @@ jQuery(function(){
 
 	function init(){
 
-		/////// Put some initial content in /////
+		/////// Put info text in the info box
+		var converter = new Markdown.Converter();
+		$.get("README.md").then(function(text){
+			$info.append( converter.makeHtml(text) ).show();
+			$("body").on('click', '.open_info', openInfo)
+				.on('click', '#info .close', closeInfo);
+		});
 
+		/////// Put some initial content in /////
 		var passages = poetry.passages;
 		var i = Lorem.random(0, passages.length - 1);
 		var passage = passages[i];
@@ -52,11 +60,14 @@ jQuery(function(){
 			stopMotion : "stopMotion",
 			reset      : "resetWords"
 		};
+
 		$nav.on('click', 'button', function(e) {
 			var name = $(this).attr("name");
+			if (!name) return;
 			var method = dictionary[name];
 			lorem[method]();
 		});
+
 		$(window.document).keyup(function(e){
 			if (e.keyCode === 192) { lorem.saunter(); }
 			if (e.keyCode === 13) {
@@ -102,7 +113,6 @@ jQuery(function(){
 				$attribution.fadeIn();
 			});
 		});
-		
 	}
 
 	function toggleAutopilot() {
@@ -112,5 +122,13 @@ jQuery(function(){
 			return;
 		}
 		$autopilot.fadeIn();
+	}
+
+	function openInfo() {
+		$('#info').addClass('open');
+	}
+
+	function closeInfo() {
+		$('#info').removeClass('open');
 	}
 });
