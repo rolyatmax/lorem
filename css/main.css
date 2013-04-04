@@ -240,9 +240,7 @@ button:hover {
 
 }
 .open_info {
-    position: absolute;
-    top: 2%;
-    left: 2%;
+
     border: 1px solid #D3D3D3;
     background-color: #fff;
     color: #838383;
@@ -299,6 +297,10 @@ button:hover {
     -webkit-transition: all .25s linear;
        -moz-transition: all .25s linear;
             transition: all .25s linear;
+}
+
+#info p {
+    color: #333;
 }
 
 #info.open {
