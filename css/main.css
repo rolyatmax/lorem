@@ -162,8 +162,8 @@ nav a:hover {
    ========================================================================== */
 
 body {
-    background-color: #333;
-    background: url('../img/debut_dark.png') 0 0 repeat;
+    background-color: #fff;
+    
     color: #333;
     font-weight: 200;
     font-family: Junge, Georgia, serif;
@@ -206,7 +206,8 @@ footer {
     right: 0;
     text-align: center;
     padding: 20px;
-    background-color: rgba(156, 156, 170, .45);
+    background-color: rgba(156, 156, 170, .85);
+    background: url('../img/debut_dark.png') 0 0 repeat;
     width: 101px;
     top: 0;
     height: 100%;
